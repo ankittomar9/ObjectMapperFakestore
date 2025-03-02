@@ -45,3 +45,9 @@ public class ProductController {
     }
 
 }
+
+
+/*
+https://fakestoreapi.com/products/1
+
+* */

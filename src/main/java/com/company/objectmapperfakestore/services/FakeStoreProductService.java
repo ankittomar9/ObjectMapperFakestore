@@ -23,7 +23,7 @@ public class FakeStoreProductService implements IProductService {
     public Product getProductById(Long productId){
         RestTemplate restTemplate= restTemplateBuilder.build();
         ResponseEntity<FakeStoreProductDto>  fakeStoreProductDtoResponseEntity = restTemplate.getForEntity(
-                "http://fakestoreapi.com/products/{productId}", FakeStoreProductDto.class,productId);
+                "http://fakestoreapi.com/products/{productId}", FakeStoreProductDto.class,productId); //.get body
 
 if(fakeStoreProductDtoResponseEntity.getStatusCode().equals(HttpStatusCode.valueOf(200)) && fakeStoreProductDtoResponseEntity.getBody() != null){
     return from(fakeStoreProductDtoResponseEntity.getBody());
